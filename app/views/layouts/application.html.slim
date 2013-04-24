@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+    title Example App
+    == javascript_include_tag "application"
+    == stylesheet_link_tag "application"
+    == javascript_client_configs
+
+  body
+    #wrapper
+      header#header
+        p.notice = @notice
+        p.alert = @alert
+
+      #container
+        == yield
+
+      footer#footer
