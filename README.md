@@ -13,7 +13,7 @@ to run irb/console
 type webmate without params to know all options
 
 show all available routes [ without assets ]
-rake routes k
+rake routes
 
 ## Tutorial
 ### Skeleton
@@ -114,3 +114,23 @@ config/environment.rb
   Rakefile
     require File.expand_path('../config/environment', __FILE__)
     Webmate::Application.load_tasks
+
+
+## Models and connection to Mongo
+### Mongo
+  config/mongoid.yml # default mongoid config file
+  and add following file
+    config/initializers/mongoid.rb
+      Mongoid.load!(File.join(WEBMATE_ROOT, 'config', 'mongoid.yml'))
+
+### Models
+  add them to app/models
+    app/models/project.rb, for example
+
+      class Project
+        include Mongoid::Document
+
+        field :name
+        field :description
+        field :status
+      end

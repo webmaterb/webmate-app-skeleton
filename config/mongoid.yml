@@ -1,0 +1,6 @@
+development:
+  sessions:
+    default:
+      database: deex_example
+      hosts:
+        - localhost:27017
