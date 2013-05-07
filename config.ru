@@ -1,7 +1,7 @@
 require './config/environment'
 if configatron.assets.compile
   map '/assets' do
-    run Sinatra::Sprockets.environment
+    run Webmate::Sprockets.environment
   end
 end
 run ExampleApp

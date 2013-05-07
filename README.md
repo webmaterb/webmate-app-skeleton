@@ -1,28 +1,29 @@
-#webmate app skeleton
+# Webmate Application Skeleton
 
 
 ## Quick start
 
-to start application, run
-    webmate start  
+1. to start application, run
+
+    webmate start
 application will be available on localhost:3000 url
 
-to run irb/console
+2. to run irb/console
+
     webmate console
 
-type webmate without params to know all options
+3. type webmate without params to know all options
 
-show all available routes [ without assets ]
+4. show all available routes [ without assets ]
+
     rake routes
 
 ## Tutorial
 ### Skeleton
-require files
 
 to create file, add following gem to Gemfile
 
-    Gemfile
-      gem 'webmate'
+    gem 'webmate'
     gem 'slim'
     gem 'sass', group: assets
     gem 'rake'
@@ -30,7 +31,8 @@ to create file, add following gem to Gemfile
 
 base required files:
 
-  config.ru
+config.ru
+
     require './config/environment'
     if configatron.assets.compile
       map '/assets' do
@@ -39,8 +41,8 @@ base required files:
     end
     run ExampleApp
 
-  config/config.rb
-  
+config/config.rb
+
     Webmate::Application.configure do |config|
       # add directory to application load paths
       #config.app.load_paths << ["app/uploaders"]
@@ -58,7 +60,8 @@ base required files:
       config.websockets.port = 3503
     end
 
-  config/application.rb
+config/application.rb
+
     require 'digest/sha1'
     require 'base64'
 
@@ -66,7 +69,8 @@ base required files:
       # do other things)
     end
 
-  config/environment.rb
+config/environment.rb
+
     WEBMATE_ROOT = File.expand_path('.')
     require 'webmate'
 
@@ -74,15 +78,18 @@ base required files:
       require file
     end
 
-  ### Hello world
-  adding route
-    app/routes/facade_routes.rb
+### Hello world
+
+1. adding route
+app/routes/facade_routes.rb
+
       ExampleApp.define_routes do
         get '/', to: 'pages#index', transport: [:http]
       end
 
-  adding  responder to this route
-  create files in app/responders
+2. adding  responder to this route
+create files in app/responders
+
     base_responder
       class BaseResponder < Webmate::Responders::Base
         # Available options
@@ -119,13 +126,15 @@ base required files:
 
 ## Models and connection to Mongo
 ### Mongo
-  config/mongoid.yml # default mongoid config file
-  and add following file
-    config/initializers/mongoid.rb
+config/mongoid.yml # default mongoid config file
+and add following file
+  config/initializers/mongoid.rb
+
       Mongoid.load!(File.join(WEBMATE_ROOT, 'config', 'mongoid.yml'))
 
 ### Models
-  add them to app/models
+add them to app/models
+
     app/models/project.rb, for example
 
       class Project

@@ -1,26 +1,3 @@
-GIT
-  remote: git://github.com/droidlabs/sinatra-sprockets.git
-  revision: 80807c7a58df45cd80360f26082eb14600718ce5
-  specs:
-    alphasights-sinatra-sprockets (0.1.0)
-      sprockets (~> 2.0)
-
-PATH
-  remote: /Users/malleus/projects/current/new_workmate/webmate
-  specs:
-    webmate (0.0.3)
-      configatron
-      em-hiredis
-      em-synchrony
-      rack-contrib
-      redis
-      sinatra
-      sinatra-contrib
-      sinatra-websocket
-      sinatra_more
-      thin
-      yajl-ruby
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -53,7 +30,7 @@ GEM
       origin (~> 1.0)
       tzinfo (~> 0.3.22)
     moped (1.4.5)
-    multi_json (1.7.2)
+    multi_json (1.7.3)
     origin (1.0.11)
     rack (1.5.2)
     rack-contrib (1.1.0)
@@ -102,6 +79,20 @@ GEM
     thor (0.18.1)
     tilt (1.3.7)
     tzinfo (0.3.37)
+    webmate (0.1.0)
+      configatron
+      em-hiredis
+      em-synchrony
+      rack-contrib
+      redis
+      sinatra
+      sinatra-contrib
+      sinatra-websocket
+      sinatra_more
+      thin
+      yajl-ruby
+    webmate-sprockets (0.1.0)
+      sprockets (~> 2.0)
     yajl-ruby (1.1.0)
     yamler (0.1.0)
 
@@ -109,9 +100,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  alphasights-sinatra-sprockets!
   mongoid
   rake
   sass
   slim
-  webmate!
+  webmate
+  webmate-sprockets
