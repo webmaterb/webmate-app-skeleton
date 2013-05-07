@@ -4,16 +4,16 @@
 ## Quick start
 
 to start application, run
-  webmate start  
+    webmate start  
 application will be available on localhost:3000 url
 
 to run irb/console
-  webmate console
+    webmate console
 
 type webmate without params to know all options
 
 show all available routes [ without assets ]
-rake routes
+    rake routes
 
 ## Tutorial
 ### Skeleton
@@ -21,25 +21,26 @@ require files
 
 to create file, add following gem to Gemfile
 
-Gemfile
-  gem 'webmate'
-  gem 'slim'
-  gem 'sass', group: assets
-  gem 'rake'
-  gem 'alphasights-sinatra-sprockets', require: 'sinatra-sprockets', group: assets
+    Gemfile
+      gem 'webmate'
+    gem 'slim'
+    gem 'sass', group: assets
+    gem 'rake'
+    gem 'alphasights-sinatra-sprockets', require: 'sinatra-sprockets', group: assets
 
 base required files:
 
-config.ru
-  require './config/environment'
-  if configatron.assets.compile
-    map '/assets' do
-      run Sinatra::Sprockets.environment
+  config.ru
+    require './config/environment'
+    if configatron.assets.compile
+      map '/assets' do
+        run Sinatra::Sprockets.environment
+      end
     end
-  end
-  run ExampleApp
+    run ExampleApp
 
   config/config.rb
+  
     Webmate::Application.configure do |config|
       # add directory to application load paths
       #config.app.load_paths << ["app/uploaders"]
@@ -73,7 +74,7 @@ config.ru
       require file
     end
 
-### Hello world
+  ### Hello world
   adding route
     app/routes/facade_routes.rb
       ExampleApp.define_routes do
