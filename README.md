@@ -39,39 +39,39 @@ config.ru
   end
   run ExampleApp
 
-config/config.rb
-  Webmate::Application.configure do |config|
-    # add directory to application load paths
-    #config.app.load_paths << ["app/uploaders"]
-    config.app.cache_classes = true
-    config.assets.compile = false
+  config/config.rb
+    Webmate::Application.configure do |config|
+      # add directory to application load paths
+      #config.app.load_paths << ["app/uploaders"]
+      config.app.cache_classes = true
+      config.assets.compile = false
 
-    config.websockets.namespace = 'api'
-    config.websockets.enabled = true
-    config.websockets.port = 9020
-  end
+      config.websockets.namespace = 'api'
+      config.websockets.enabled = true
+      config.websockets.port = 9020
+    end
 
-Webmate::Application.configure(:development) do |config|
-  config.app.cache_classes = false
-  config.assets.compile = true
-  config.websockets.port = 3503
-end
+    Webmate::Application.configure(:development) do |config|
+      config.app.cache_classes = false
+      config.assets.compile = true
+      config.websockets.port = 3503
+    end
 
-config/application.rb
-  require 'digest/sha1'
-  require 'base64'
+  config/application.rb
+    require 'digest/sha1'
+    require 'base64'
 
-  class ExampleApp < Webmate::Application
-    # do other things)
-  end
+    class ExampleApp < Webmate::Application
+      # do other things)
+    end
 
-config/environment.rb
-  WEBMATE_ROOT = File.expand_path('.')
-  require 'webmate'
+  config/environment.rb
+    WEBMATE_ROOT = File.expand_path('.')
+    require 'webmate'
 
-  Dir[File.join(WEBMATE_ROOT, 'app', 'routes', '**', '*.rb')].each do |file|
-    require file
-  end
+    Dir[File.join(WEBMATE_ROOT, 'app', 'routes', '**', '*.rb')].each do |file|
+      require file
+    end
 
 ### Hello world
   adding route
@@ -105,12 +105,12 @@ config/environment.rb
       app/views/layouts/application.html.slim
       app/views/pages/index.html.slim
 
-### Assets
+  ### Assets
   assets will be searched in app/assets folder, so place them to
-  app/assets/javascripts
-  app/assets/stylesheets
+    app/assets/javascripts
+    app/assets/stylesheets
 
-### Utilities - rake task, scripts
+  ### Utilities - rake task, scripts
   Rakefile
     require File.expand_path('../config/environment', __FILE__)
     Webmate::Application.load_tasks
