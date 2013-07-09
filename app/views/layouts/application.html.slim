@@ -1,18 +1,11 @@
 doctype html
 html
   head
-    title Example App
-    == javascript_include_tag "application"
+    title Webmate
     == stylesheet_link_tag "application"
-    == javascript_client_configs
+    == javascript_include_tag "application"
+    == javascript_include_tag 'http://code.jquery.com/jquery-2.0.0.min.js'
+    == javascript_include_tag 'http://webmate.s3.amazonaws.com/assets/parallaxify.js'
 
   body
-    #wrapper
-      header#header
-        p.notice = @notice
-        p.alert = @alert
-
-      #container
-        == yield
-
-      footer#footer
+    == yield

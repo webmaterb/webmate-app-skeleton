@@ -8,5 +8,6 @@ gem 'mongoid', '~> 3.1.4'
 
 group :assets do
   gem 'webmate-sprockets'
+  gem 'webmate-client'
   gem 'sass'
 end

@@ -4,4 +4,4 @@ if configatron.assets.compile
     run Webmate::Sprockets.environment
   end
 end
-run ExampleApp
+run Webmate::Application

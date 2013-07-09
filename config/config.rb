@@ -1,6 +1,6 @@
 Webmate::Application.configure do |config|
   # add directory to application load paths
-  #config.app.load_paths << ["app/uploaders"]
+  # config.app.load_paths << ["app/uploaders"]
   config.app.cache_classes = true
   config.assets.compile = false
 
