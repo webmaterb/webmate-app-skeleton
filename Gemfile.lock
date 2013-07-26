@@ -85,7 +85,7 @@ GEM
     thor (0.18.1)
     tilt (1.4.1)
     tzinfo (0.3.37)
-    webmate (0.1.5)
+    webmate (0.1.6)
       configatron
       em-hiredis
       em-synchrony
@@ -97,7 +97,7 @@ GEM
       sinatra_more
       thin
       yajl-ruby
-    webmate-client (0.1.1)
+    webmate-client (0.1.3)
       coffee-script
     webmate-sprockets (0.1.2)
       sprockets (~> 2.10)
