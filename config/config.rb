@@ -4,7 +4,6 @@ Webmate::Application.configure do |config|
   config.app.cache_classes = true
   config.assets.compile = false
 
-  config.websockets.namespace = 'api'
   config.websockets.enabled = true
   config.websockets.port = 9020
 end
